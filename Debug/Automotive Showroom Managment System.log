@@ -1,0 +1,6 @@
+﻿  Automotive Showroom Managment System.cpp
+  Showroom.cpp
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(95,20): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(113,16): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Automotive Showroom Managment System.vcxproj -> D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Debug\Automotive Showroom Managment System.exe
