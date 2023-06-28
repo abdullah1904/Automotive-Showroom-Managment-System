@@ -13,7 +13,7 @@ int main() {
 	else{
 		clear();
 		setColor(4);
-		cout<<"Invalid Usernamr or Password! Enter Valid Username or Password..."<<endl;
+		cout<<"Invalid Username or Password! Enter Valid Username or Password..."<<endl;
 		setColor(15);
 		system("pause");
 		clear();
