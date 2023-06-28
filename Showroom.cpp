@@ -19,6 +19,10 @@ user::user(string u, string p){
 	this->username=u;
 	this->password=p;
 }
+void user::set(string u,string p){
+	this->username=u;
+	this->password=p;
+}
 bool user::check(string u, string p){
 	return u == this->username && p == this->password ? true :  false;
 }
@@ -111,7 +115,8 @@ void showRoom::menu(){
 	setColor(3); cout<<"C)"; setColor(15); cout<<" Bikes"<<endl;
 	setColor(3); cout<<"D)"; setColor(15); cout<<" Users"<<endl;
 	setColor(3); cout<<"E)"; setColor(15); cout<<" About"<<endl;
-	setColor(3); cout<<"F)"; setColor(15); cout<<" Exit"<<endl<<endl;
+	setColor(3); cout<<"F)"; setColor(15); cout<<" Log Out"<<endl;
+	setColor(3); cout<<"G)"; setColor(15); cout<<" Exit"<<endl<<endl;
 	setColor(3); cout<<"Select Option: "; 
 	setColor(15);
 	cin>>dummy;
@@ -132,7 +137,10 @@ void showRoom::menu(){
 		case 'E': this->about();
 		break;
 		case 'f':
-		case 'F': clear(); exit(0);
+		case 'F': return;
+		break;
+		case 'g':
+		case 'G': clear(); exit(0);
 		break;
 		default: clear(); setColor(4); cout << "Invalid Option! Enter Valid option..." << endl; setColor(15); system("pause");
 	}
@@ -268,16 +276,16 @@ void showRoom::User(){
 	cin>>dummy;
 	switch (dummy){
 		case 'a':
-		case 'A': ;
+		case 'A': this->addUser();
 		break;
 		case 'b':
-		case 'B': ;
+		case 'B': this->showUsers();
 		break;
 		case 'c':
-		case 'C': ;
+		case 'C': this->searchUser();
 		break;
 		case 'd':
-		case 'D': ;
+		case 'D': this->deleteUser();
 		break;
 		case 'e':
 		case 'E': return;
@@ -291,10 +299,104 @@ void showRoom::about(){
 	setColor(3);
 	header();
 	setColor(15);
-	cout<<"  --: About Showroom :--"<<endl<<endl;
-	cout<<"Owner Name: "<<this->owner<<"\t\t\t"<<"Showroom Station: "<<this->city<<endl;
-	cout<<"Share Holder: Ms. Mahreen Farooq\tPartner: Mr. Mirza Sufiyan Ahmad"<<endl<<endl;
-	cout<<"Total Number of Cars: "<<cars.size()<<"\t\t\t"<<"Total Number of Bikes: "<<"N/A"<<endl<<endl;
+	cout<<"  --: ABOUT SHOWROOM :--"<<endl<<endl;
+	setColor(3);cout<<"Owner Name: ";setColor(15);cout<<this->owner<<"\t\t\t";setColor(3);cout<<"Showroom Station: ";setColor(15);cout<<this->city<<endl;
+	setColor(3);cout<<"Share Holder: ";setColor(15);cout<<"Ms. Mahreen Farooq\t";setColor(3);cout<<"Partner: ";setColor(15);cout<<" Mr. Mirza Sufiyan Ahmad"<<endl<<endl;
+	setColor(3);cout<<"Total Number of Cars: ";setColor(15);cout<<cars.size()<<"\t\t\t";setColor(3);cout<<"Total Number of Bikes: ";setColor(15);cout<<"N/A"<<endl<<endl;
+	setColor(3);cout<<"Description:\n";
+	setColor(15);cout<<"\tHello Abdullah"<<endl<<endl;
 	system("pause");
 	return;
+}
+void showRoom::addUser(){
+	string u,p;
+	clear();
+	setColor(12);
+	header();
+	setColor(7);
+	cout<<"  --: NEW USER :--"<<endl<<endl;
+	setColor(12);cout<<"Enter New Username: ";setColor(7);getline(cin>>ws,u);
+	setColor(12);cout<<"Enter New Password: ";setColor(7);getline(cin>>ws,p);
+	users.push_back(user(u,p));
+	setColor(7);cout<<endl<<"Successfully Added New User..."<<endl<<endl;
+	setColor(7);system("pause");
+	return;
+}
+void showRoom::showUsers(){
+	clear();
+	setColor(12);
+	header();
+	setColor(7);
+	cout<<"  --: USERS :--"<<endl<<endl;
+	setColor(12);cout<<"Users: ";
+	for(int i =0; i<users.size();i++){
+		cout<<endl;setColor(12);cout<<"\t"<<i+1<<") ";setColor(7);cout<<users[i].getUserName();
+	}
+	cout<<endl<<endl;setColor(7);system("pause");
+	return;
+}
+void showRoom::searchUser(){
+	string u,p,s;
+	clear();
+	setColor(12);
+	header();
+	setColor(7);
+	cout<<"  --: SEARCH USER :--"<<endl<<endl;
+	setColor(12);cout<<"Enter Your Username: ";setColor(7);getline(cin>>ws,u);
+	setColor(12);cout<<"Enter Your Password: ";setColor(7);getline(cin>>ws,p);
+	setColor(12);cout<<"Enter Username to Search: ";setColor(7);getline(cin>>ws,s);
+	cout<<endl;
+	for(int i =0; i<users.size();i++){
+		if(u == "Abdullah" && p == "abdullah1904" && s == users[i].getUserName()){
+			setColor(12);cout<<"Username: ";setColor(7);cout<<users[i].getUserName()<<endl;
+			setColor(12);cout<<"Password: ";setColor(7);cout<<users[i].getPassword()<<endl<<endl;
+			setColor(7);system("pause");
+		return;
+		}
+		else if(u != "Abdullah" && p != "abdullah1904" && s == users[i].getUserName()){
+			setColor(12);cout<<"NOTE: ";setColor(7);cout<<"\n\tGiven Username is in our record but sorry we can't share information with you.";
+			cout<<endl<<endl;setColor(7);system("pause");
+			return;
+		}
+	}
+	clear();
+	setColor(4);
+	cout<<"Sorry! This User is Not in our Record..."<<endl;
+	setColor(15);
+	system("pause");
+	return;
+}
+void showRoom::deleteUser(){
+	string u;
+	D:
+	clear();
+	setColor(12);
+	header();
+	setColor(7);
+	cout<<"  --: REMOVE USER :-- "<<endl<<endl;
+	setColor(12);cout<<"Enter Username to Remove: ";setColor(7);getline(cin>>ws,u);
+	if(u == "Abdullah"){
+		clear();
+		setColor(4);
+		cout<<"Invalid Username! This User is Admin. Enter Valid Username..."<<endl;
+		setColor(15);
+		system("pause");
+	goto D;
+	}
+	for(int i = 0; i<users.size();i++){
+		if(u == users[i].getUserName()){
+			for(int j = i; j<users.size()-1;j++)
+				users[j].set(users[j+1].getUserName(),users[j+1].getPassword());
+			users.resize(users.size()-1);
+			setColor(15);cout<<endl<<"Successfully User Removed..."<<endl<<endl;
+			setColor(7);system("pause");
+			return;
+		}
+	}
+	clear();
+	setColor(4);
+	cout<<"Invalid Username! This User is Not in Our Record. Enter Valid Username..."<<endl;
+	setColor(15);
+	system("pause");
+	goto D;
 }

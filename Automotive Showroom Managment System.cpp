@@ -6,9 +6,11 @@ int main() {
 	showRoom s1("Abdullah", "Lahore");
 	login:
 	setColor(10);
+	clear();
 	if(s1.login()){
 		clear();
 		s1.menu();
+		goto login;
 	}
 	else{
 		clear();

@@ -13,6 +13,7 @@ void error();
 class user{
 public:
     user(std::string="", std::string="");
+    void set(std::string,std::string);
     bool check(std::string,std::string);
     std::string getUserName();
     std::string getPassword();
@@ -50,6 +51,15 @@ public:
     void bike();
     void User();
     void about();
+    void addCar();
+    void showCars();
+    void searchCar();
+    void deleteCar();
+    void updateCar();
+    void addUser();
+    void showUsers();
+    void searchUser();
+    void deleteUser();
 private:
     std::string owner, city;
     std::vector<user> users;
