@@ -1,7 +1,20 @@
 ﻿  Showroom.cpp
-D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(98,16): warning C4018: '<': signed/unsigned mismatch
-D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(332,17): warning C4018: '<': signed/unsigned mismatch
-D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(349,17): warning C4018: '<': signed/unsigned mismatch
-D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(385,18): warning C4018: '<': signed/unsigned mismatch
-D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(387,20): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(38,17): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(195,16): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(260,17): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(268,17): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(442,17): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(459,17): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(483,18): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(485,20): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(510,17): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(542,17): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(559,17): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(583,18): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(585,20): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(610,17): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(645,17): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(662,17): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(698,18): warning C4018: '<': signed/unsigned mismatch
+D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Showroom.cpp(700,20): warning C4018: '<': signed/unsigned mismatch
   Automotive Showroom Managment System.vcxproj -> D:\UET Narowal\2nd Semester\Object Oriented Programming\Project\Automotive Showroom Managment System\Debug\Automotive Showroom Managment System.exe

@@ -4,11 +4,6 @@
 #include <string>
 #include <vector>
 #include <fstream>
-// Utility Functions
-void header();
-void clear();
-void setColor(int);
-void error();
 // Authorization Class
 class user{
 public:
@@ -23,21 +18,35 @@ private:
 // Vehicle Class
 class vehicle{
 public: 
-    vehicle(std::string="", std::string="",int=00,int=00);
+    vehicle(std::string="", std::string="",std::string="",int=00,int=00);
     virtual void get() = 0;
     virtual void display() = 0;
+    std::string getCompany();
+    std::string getModel();
+    int getPrice();
 protected:
-    std::string company, model;
+    std::string company, model,color;
     int engineCapacity, price;
 };
 // Car Class
 class Car:public vehicle{
 public:
-    Car(std::string="",std::string="",std::string="",std::string="",int=00,int=00,int=00);
+    Car(std::string="",std::string="",std::string="",std::string="",std::string="",int=00,int=00,int=00);
+    void set(Car);
     void get();
     void display();
 private:
     std::string fuelType, transmission;
+    int yearOfManufacture;
+};
+// Bike Class
+class Bike:public vehicle{
+public:
+    Bike(std::string="",std::string="",std::string="",int=00,int=00,int=00);
+    void set(Bike);
+    void get();
+    void display();
+private:
     int yearOfManufacture;
 };
 // Showroom Class
@@ -46,16 +55,25 @@ public:
     showRoom(std::string="", std::string="");
     bool login();
     void menu();
+    // Menu Options
     void bill();
     void car();
     void bike();
     void User();
     void about();
+    // Car Section Options
     void addCar();
     void showCars();
     void searchCar();
     void deleteCar();
     void updateCar();
+    // Bike Section Options
+    void addBike();
+    void showBikes();
+    void searchBike();
+    void deleteBike();
+    void updateBike();
+    // User Section Options
     void addUser();
     void showUsers();
     void searchUser();
@@ -64,8 +82,13 @@ private:
     std::string owner, city;
     std::vector<user> users;
     std::vector<Car> cars;
+    std::vector<Bike> bikes;
 };
-
+// Utility Functions
+void header();
+void clear();
+void setColor(int);
+void printBill(std::vector<Car>, std::vector<Bike>);
 
 
 #endif
