@@ -34,6 +34,7 @@ void printBill(vector<Car> C, vector<Bike> B){
 	header();
 	setColor(12);
 	cout<<"  --: BILL :--"<<endl<<endl;
+	setColor(12);cout<<"Customer Name: ";setColor(7);cout<<name<<endl<<endl;
 	setColor(12);cout<<"Cars: "<<endl;
 	for(int i =0; i<C.size();i++){
 		total += C[i].getPrice();
@@ -44,11 +45,23 @@ void printBill(vector<Car> C, vector<Bike> B){
 		cout<<"\t";
 		setColor(12);cout<<"Car Price: ";setColor(7);cout<<C[i].getPrice()<<endl;
 	}
+	setColor(12);cout<<endl<<"Bikes: "<<endl;
+	for(int i =0; i<B.size();i++){
+		total += B[i].getPrice();
+		cout<<i+1<<endl<<"\t";
+		setColor(12);cout<<"Bike Company: ";setColor(7);cout<<C[i].getCompany()<<endl;
+		cout<<"\t";
+		setColor(12);cout<<"Bike Model: ";setColor(7);cout<<C[i].getModel()<<endl;
+		cout<<"\t";
+		setColor(12);cout<<"Bike Price: ";setColor(7);cout<<C[i].getPrice()<<endl;
+	}
+	cout<<endl;
+	setColor(12);cout<<"Total No. of Items: ";setColor(7);cout<<C.size()+B.size()<<endl;
+	setColor(12);cout<<"Total Price: ";setColor(7);cout<<total<<endl;
+	setColor(12);
+	cout<<"\n\t -------------------------------------------------- \t\n"<<endl;
 	system("pause");
-	// setColor(12);cout<<endl<<"Bikes: "<<endl;
-	// for(int i =0; i<B.size();i++){
-	// 	total += B[i].getPrice();
-	// }
+	return;
 }
 // Authorization Class Definations
 user::user(string u, string p){
@@ -177,6 +190,7 @@ showRoom::showRoom(string o, string c) {
 	users.push_back(user("Mahreen", "mahreen"));
 	users.push_back(user("Sufiyan", "sufiyan"));
 	cars.push_back(Car("Mercedes-Maybach", "S 680 4MATIC","White","Petrol","Automatic",5980,470000,2022));
+	cars.push_back(Car("Honda","Civic","Black","Petrol","Manual",1500,1280,2017));
 }
 bool showRoom::login(){
 	string n,p;
@@ -260,11 +274,8 @@ void showRoom::bill() {
 	for(int i =0; i<cars.size();i++){
 		if(c == cars[i].getCompany() && m == cars[i].getModel()){
 			billC.push_back(cars[i]);
-			for(int j =i ; j<cars.size();j++){
-				cars[j].set(cars[j+1]);
-			}
-			setColor(7);cout<<endl<<"Successfully Added..."<<endl<<endl;
-			system("pause");
+			setColor(15);cout<<endl<<"Successfully Added..."<<endl<<endl;
+			setColor(7);system("pause");
 			goto options;
 		}
 	}
@@ -276,13 +287,18 @@ void showRoom::bill() {
 			goto options;
 		}
 	}
+	clear();
+	setColor(4);
+	cout<<"Sorry! This Vehicle is not in our Collection..."<<endl;
+	setColor(15);
+	system("pause");
 	options:
 	clear();
 	setColor(7);
 	header();
 	setColor(12);
 	cout<<"  --: BILLING :--"<<endl<<endl;
-	setColor(12);cout<<"A) ";setColor(7);cout<<"Add Another"<<endl;
+	setColor(12);cout<<"A) ";setColor(7);cout<<"Add New"<<endl;
 	setColor(12);cout<<"B) ";setColor(7);cout<<"Print Bill"<<endl<<endl;
 	setColor(12); cout<<"Select Option: "; 
 	setColor(7);cin>>dummy;
@@ -290,7 +306,7 @@ void showRoom::bill() {
 		case 'a':
 		case 'A': goto bill;
 		case 'b':
-		case 'B': printBill(cars,bikes);
+		case 'B': printBill(billC,billB);
 		default: clear(); setColor(4); cout << "Invalid Option! Enter Valid option..." << endl; setColor(15); system("pause");
 	}
 }
