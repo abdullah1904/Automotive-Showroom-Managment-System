@@ -274,6 +274,9 @@ void showRoom::bill() {
 	for(int i =0; i<cars.size();i++){
 		if(c == cars[i].getCompany() && m == cars[i].getModel()){
 			billC.push_back(cars[i]);
+			for (int j = i; j < cars.size() - 1; j++)
+				cars[j] = cars[j + 1];
+			cars.resize(cars.size()-1);
 			setColor(15);cout<<endl<<"Successfully Added..."<<endl<<endl;
 			setColor(7);system("pause");
 			goto options;
@@ -282,6 +285,9 @@ void showRoom::bill() {
 	for(int i =0; i<bikes.size();i++){
 		if(c == bikes[i].getCompany() && m == bikes[i].getModel()){
 			billB.push_back(bikes[i]);
+			for (int j = i; j < bikes.size() - 1; j++)
+				bikes[j] = bikes[j + 1];
+			bikes.resize(bikes.size() - 1);
 			setColor(7);cout<<endl<<"Successfully Added..."<<endl<<endl;
 			system("pause");
 			goto options;
@@ -306,7 +312,7 @@ void showRoom::bill() {
 		case 'a':
 		case 'A': goto bill;
 		case 'b':
-		case 'B': printBill(billC,billB);
+		case 'B': printBill(billC,billB); return;
 		default: clear(); setColor(4); cout << "Invalid Option! Enter Valid option..." << endl; setColor(15); system("pause");
 	}
 }
