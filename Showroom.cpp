@@ -384,7 +384,7 @@ void showRoom::bike(){
 		case 'C': this->searchBike();
 		break;
 		case 'd':
-		case 'D': ;
+		case 'D': this->deleteBike();
 		break;
 		case 'e':
 		case 'E': this->updateBike();

@@ -7,7 +7,6 @@
 class user{
 public:
     user(std::string="", std::string="");
-    ~user();
     void set(std::string,std::string);
     bool check(std::string,std::string);
     std::string getUserName();
@@ -19,7 +18,6 @@ private:
 class vehicle{
 public: 
     vehicle(std::string="", std::string="",std::string="",int=00,int=00);
-    ~vehicle();
     virtual void get() = 0;
     virtual void display() = 0;
     std::string getCompany();
@@ -33,7 +31,6 @@ protected:
 class Car:public vehicle{
 public:
     Car(std::string="",std::string="",std::string="",std::string="",std::string="",int=00,int=00,int=00);
-    ~Car();
     void set(Car);
     void get();
     void display();
@@ -45,7 +42,6 @@ private:
 class Bike:public vehicle{
 public:
     Bike(std::string="",std::string="",std::string="",int=00,int=00,int=00);
-    ~Bike();
     void set(Bike);
     void get();
     void display();
@@ -56,7 +52,6 @@ private:
 class showRoom {
 public:
     showRoom(std::string="", std::string="");
-    ~showRoom();
     bool login();
     void menu();
     // Menu Options
@@ -93,6 +88,5 @@ void header();
 void clear();
 void setColor(int);
 void printBill(std::vector<Car>, std::vector<Bike>);
-
 
 #endif
